@@ -1,4 +1,4 @@
-# New_App
+# News_App
 
 This project gets Data from https://newsapi.org/, please sign in and get API key to use the App.
 
