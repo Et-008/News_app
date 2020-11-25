@@ -29,7 +29,7 @@ class Search_Results extends Component {
                 let headlinesFilteredArr = headlinesArr.filter((item,index,self) => self.indexOf(item)===index);
                 this.setState({searchResults: everythingFilteredArr})
                 this.setState({headlines: headlinesFilteredArr})
-        })
+        }).catch(err => console.error(err))
     }
 
     componentDidUpdate (prevProps) {
@@ -49,7 +49,7 @@ class Search_Results extends Component {
                 let headlinesFilteredArr = headlinesArr.filter((item,index,self) => self.indexOf(item)===index);
                 this.setState({searchResults: everythingFilteredArr})
                 this.setState({headlines: headlinesFilteredArr})
-            })
+            }).catch(err => console.error(err))
         }
     }
 
