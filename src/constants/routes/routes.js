@@ -1,4 +1,4 @@
-export const HOME = "/top-headlines";
+export const HOME = "/";
 export const SEARCH = "/search";
 export const BUSINESS = "/business";
 export const ENTERTAINMENT = "/entertainment";

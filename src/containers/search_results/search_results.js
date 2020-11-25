@@ -54,18 +54,12 @@ class Search_Results extends Component {
     }
 
     render() {
-        let allNews = this.state.searchResults ? (this.state.searchResults.map((data, index) => {
-            return (<img key={index} className="Images" src={data.urlToImage ? data.urlToImage : 'https://upload.wikimedia.org/wikipedia/en/d/d1/Image_not_available.png'} alt="Not Loaded" />)
-        })) : {title: "Search Results",
-                data: ""}
-        let topNews = this.state.headlines ? (this.state.headlines.map((data, index) => {
-            return (<img key={index} className="Images" src={data.urlToImage ? data.urlToImage : 'https://upload.wikimedia.org/wikipedia/en/d/d1/Image_not_available.png'} alt="Not Loaded" />)
-        })) : {title: "Search Results",
-                data: ""}
+        let allNews = this.state.searchResults ? this.state.searchResults : [];
+        let topNews = this.state.headlines ? this.state.headlines : [];
         return (
             <div className="Main">
-                <NewsDisplay title={"TOP-HEADLINES"} data={topNews} />
-                <NewsDisplay title={"EVERYTHING"} data={allNews} />
+                <NewsDisplay title={"TOP-HEADLINES"} Data={topNews} />
+                <NewsDisplay title={"EVERYTHING"} Data={allNews} />
             </div>
         )
     }

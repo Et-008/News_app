@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import Layout from '../../components/layout/layout';
 import SideContent from '../../components/side_content/side_content';
@@ -9,7 +9,7 @@ import Search_Results from '../search_results/search_results';
 let Router = (props) => {
     return (
         <Layout>
-          <SideContent />
+          <SideContent/>
             <Switch>
                 <Route path={Routes.HOME} exact component={HeadLines} />
                 <Route path={'/top-headlines/:CATEGORY' } exact component={HeadLines} />

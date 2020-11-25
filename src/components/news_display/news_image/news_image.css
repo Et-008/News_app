@@ -1,0 +1,12 @@
+.NewsData {
+    width: 20%;
+    height: 20%;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    position: relative;
+}
+.Images {
+    width: 200px;
+    height: 200px;
+}

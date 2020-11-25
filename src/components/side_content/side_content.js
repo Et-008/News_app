@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import * as Routes from '../../constants/routes/routes';
 import './side_content.css';
 
 class Side_Content extends Component {
     state = {
-        sources: [All],
+        sources: [],
         source: '',
-        searchText: null,
+        searchText: '',
         sortBy: 'publishedAt',
         
         sortingOptions: [{PublishedAt: 'publishedAt'},

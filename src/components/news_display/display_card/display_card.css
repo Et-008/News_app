@@ -1,0 +1,67 @@
+.DisplayCard {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 100;
+  padding: 50px;
+  position: fixed;
+  justify-content: space-between;
+  background-color: rgb(0,0,0);
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.CardImage {
+  width: 40%;
+  height: 90%;
+  float: left;
+  display: inline;
+  padding-left: 50px;
+}
+.CardData {
+  padding: 0;
+  margin: 0;
+  width: 40%;
+  height: 90%;
+  display: inline-block;
+  border: 1px solid yellow;
+}
+.CloseButton {
+  padding: 10px;
+  font-size: 2em;
+  font-weight: bold;
+  display: inline;
+  position: fixed;
+  float: right;
+  right: 50px;
+  top: 0;
+  cursor: pointer;
+}
+.Footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+.LinkButton {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: none;
+  background: white;
+  display: inline;
+}
+.LinkButton a {
+  color: black;
+  text-decoration: none;
+}
+.Footer p {
+  display: inline-block;
+}

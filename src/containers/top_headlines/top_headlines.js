@@ -12,39 +12,38 @@ class News_Content extends Component {
             category: '',
         }
     }
-
-    // componentWillReceiveProps(this.props.location.state.country) {
-    //     this.setState({country: this.props.location.state.country})
-    // }
+    
     componentDidMount () {
-        if(this.props.location.state.country!== 'in') {
-            this.setState({country: this.props.location.state.country})
-        }
-        axios.get('https://newsapi.org/v2/top-headlines?country='+ this.props.location.state.country +'&category=&apiKey=' + process.env.REACT_APP_API_KEY)
+        axios.get('https://newsapi.org/v2/top-headlines?country=in&category=&apiKey=' + process.env.REACT_APP_API_KEY)
         .then(res => {
             this.setState({headlines: res.data.articles})
+            this.setState({country: 'in'});
         }).catch(err => console.error(err))
     }
 
-    componentDidUpdate(prevProps) {
-        if(this.props.location.state.country !== prevProps.location.state.country || this.props.match.params.CATEGORY!== prevProps.match.params.CATEGORY) {
-            this.setState({country: this.props.location.state.country})
-            let category = this.props.match.params.CATEGORY ? this.props.match.params.CATEGORY : '';
-            axios.get('https://newsapi.org/v2/top-headlines?country='+ this.props.location.state.country +'&category='+ category +'&apiKey=' + process.env.REACT_APP_API_KEY)
-            .then(res => {
-                this.setState({headlines: res.data.articles})
-            }).catch(err => console.error(err))
+    componentDidUpdate(prevProps, prevState) {
+        if(this.props.location.state && this.props.match.params) {
+            if(this.props.location.state.country || this.props.match.params.CATEGORY) {
+                if (this.props.location.state.country !== prevProps.location.state.country || this.props.match.params.CATEGORY !== prevProps.match.params.CATEGORY) {
+                    this.setState({country: this.props.location.state.country})
+                    let category = this.props.match.params.CATEGORY ? this.props.match.params.CATEGORY : '';
+                    axios.get('https://newsapi.org/v2/top-headlines?country='+ this.props.location.state.country +'&category='+ category +'&apiKey=' + process.env.REACT_APP_API_KEY)
+                    .then(res => {
+                        this.setState({headlines: res.data.articles})
+                    }).catch(err => console.error(err))
+                }
+            }
         }
     }
 
     render() {
-        let news = this.state.headlines.map(data => {
-            return (<img key={data.title} className="Images" src={data.urlToImage ? data.urlToImage : 'https://upload.wikimedia.org/wikipedia/en/d/d1/Image_not_available.png'} alt="Not Loaded" />)
-        })
-        // console.log(this.props.match.params.CATEGORY);
+        let data = [];
+        if(this.state.headlines) {
+            data = this.state.headlines;
+        };
         return (
             <div className="Main">
-                <News_Display title={this.props.match.params.CATEGORY ? (this.props.match.params.CATEGORY).toUpperCase() : "TOP-HEADLINES"} data={news} />
+                <News_Display title={this.props.match.params.CATEGORY ? (this.props.match.params.CATEGORY).toUpperCase() : "TOP-HEADLINES"} Data={data} />
             </div>
         )
     }
