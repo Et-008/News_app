@@ -9,9 +9,9 @@ let Display_Card = (props) => {
         <img className="CardImage" src={props.Data.urlToImage ? props.Data.urlToImage : 'https://upload.wikimedia.org/wikipedia/en/d/d1/Image_not_available.png'}
          alt="Not Loaded"/>
         <div className="CardData">
-            <h2>{props.Data.title}</h2>
-            <h4>{props.Data.description}</h4>
-            <p>{props.Data.content}</p>
+            <h2 className="CardTitle">{props.Data.title}</h2>
+            <h4 className="CardDesc">{props.Data.description}</h4>
+            <p className="CardContent">{props.Data.content}</p>
             
             <footer className="Footer">
                 <button className="LinkButton"><a href={props.Data.url} target="_blank" rel="noopener noreferrer">Open Link</a></button>
