@@ -2,7 +2,15 @@
 
 This project gets Data from https://newsapi.org/, please sign in and get API key to use the App.
 
-## setting up key
+## Cloning the Project
+
+open Terminal, go to the folder you want the project to be stored.
+
+type in the command "git clone https://github.com/Et-008/News_app.git"
+
+New_app folder will be created, cd into the Folder and type the command "npm install"
+
+## setting up API key
 
 create a .env file in root folder and create a variable REACT_APP_API_KEY = {Your_API_Key}
 
