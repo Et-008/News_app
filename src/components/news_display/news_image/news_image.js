@@ -5,10 +5,10 @@ import './news_image.css';
 let News_Images = (props) => {
     let [display, setDisplay] = useState('hide');
     let handleNewsClick = () => {
-        if(display == 'hide') {
+        if(display === 'hide') {
             setDisplay('show')
         }
-        if(display == 'show') {
+        if(display === 'show') {
             setDisplay('hide')
         }
     }
