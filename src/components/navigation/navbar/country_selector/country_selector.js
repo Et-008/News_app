@@ -3,7 +3,7 @@ import Countries from '../../../../constants/countries/country_list';
 
 let Country_Selector = (props) => {
     let OptionalCountries = Countries.map(country => {
-        return (<option key={country.id} value={country.name} >{country.name}</option>)
+        return (<option key={country.id} value={country.id} >{country.name}</option>)
     })
 
     return (

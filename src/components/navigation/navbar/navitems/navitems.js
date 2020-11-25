@@ -8,32 +8,62 @@ let Navitems = (props) => {
     return (
         <ul className="Navitems">
             <Navitem>
-                <NavLink to={'/top-headlines'+ Routes.BUSINESS}>
+                <NavLink to={
+                    {
+                        pathname: '/top-headlines'+ Routes.BUSINESS,
+                        state: {country: props.Country}
+                    }
+                }>
                     <p>BUSINESS</p>
                 </NavLink>
             </Navitem>
             <Navitem>
-                <NavLink to={'/top-headlines'+ Routes.ENTERTAINMENT}>
+                <NavLink to={
+                    {
+                        pathname: '/top-headlines'+ Routes.ENTERTAINMENT,
+                        state: {country: props.Country}
+                    }
+                }>
                     <p>ENTERTAINMENT</p>
                 </NavLink>
             </Navitem>
             <Navitem>
-                <NavLink to={'/top-headlines'+ Routes.HEALTH}>
+                <NavLink to={
+                    {
+                        pathname: '/top-headlines'+ Routes.HEALTH,
+                        state: {country: props.Country}
+                    }
+                }>
                     <p>HEALTH</p>
                 </NavLink>
             </Navitem>
             <Navitem>
-                <NavLink to={'/top-headlines'+ Routes.SPORTS}>
+                <NavLink to={
+                    {
+                        pathname: '/top-headlines'+ Routes.SPORTS,
+                        state: {country: props.Country}
+                    }
+                }>
                     <p>SPORTS</p>
                 </NavLink>
             </Navitem>
             <Navitem>
-                <NavLink to={'/top-headlines'+ Routes.SCIENCE}>
+                <NavLink to={
+                    {
+                        pathname: '/top-headlines'+ Routes.SCIENCE,
+                        state: {country: props.Country}
+                    }
+                }>
                     <p>SCIENCE</p>
                 </NavLink>
             </Navitem>
             <Navitem>
-                <NavLink to={'/top-headlines'+ Routes.TECHNOLOGY}>
+                <NavLink to={
+                    {
+                        pathname: '/top-headlines'+ Routes.TECHNOLOGY,
+                        state: {country: props.Country}
+                    }
+                }>
                     <p>TECHNOLOGY</p>
                 </NavLink>
             </Navitem>

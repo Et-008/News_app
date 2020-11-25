@@ -11,9 +11,13 @@
     margin: 25px;
     padding-top: 25px;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     justify-content: space-around;
     align-items: center;
+}
+.filter-options div {
+    width: 100%;
+    padding: 25px 5px;
 }
 .filter-options label {
     width: 50%;

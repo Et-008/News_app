@@ -13,17 +13,24 @@ class News_Content extends Component {
         }
     }
 
+    // componentWillReceiveProps(this.props.location.state.country) {
+    //     this.setState({country: this.props.location.state.country})
+    // }
     componentDidMount () {
-        axios.get('https://newsapi.org/v2/top-headlines?country=in&category=&apiKey=' + process.env.REACT_APP_API_KEY)
+        if(this.props.location.state.country!== 'in') {
+            this.setState({country: this.props.location.state.country})
+        }
+        axios.get('https://newsapi.org/v2/top-headlines?country='+ this.props.location.state.country +'&category=&apiKey=' + process.env.REACT_APP_API_KEY)
         .then(res => {
             this.setState({headlines: res.data.articles})
         }).catch(err => console.error(err))
     }
 
     componentDidUpdate(prevProps) {
-        if(this.props.match.params.CATEGORY!== prevProps.match.params.CATEGORY) {
+        if(this.props.location.state.country !== prevProps.location.state.country || this.props.match.params.CATEGORY!== prevProps.match.params.CATEGORY) {
+            this.setState({country: this.props.location.state.country})
             let category = this.props.match.params.CATEGORY ? this.props.match.params.CATEGORY : '';
-            axios.get('https://newsapi.org/v2/top-headlines?country=in&category='+ category +'&apiKey=' + process.env.REACT_APP_API_KEY)
+            axios.get('https://newsapi.org/v2/top-headlines?country='+ this.props.location.state.country +'&category='+ category +'&apiKey=' + process.env.REACT_APP_API_KEY)
             .then(res => {
                 this.setState({headlines: res.data.articles})
             }).catch(err => console.error(err))

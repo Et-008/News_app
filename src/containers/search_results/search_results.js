@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import NewsDisplay from "../../components/news_display/news_display";
-// import './top_headlines.css';
 
 class Search_Results extends Component {
     constructor(props) {
@@ -15,9 +14,12 @@ class Search_Results extends Component {
     }
 
     componentDidMount () {
-        console.log(this.props);
-        let everything = axios.get('https://newsapi.org/v2/everything?q='+ this.props.match.params.Q +'&apiKey=' + process.env.REACT_APP_API_KEY)
-        let top_headlines = axios.get('https://newsapi.org/v2/top-headlines?q='+ this.props.match.params.Q +'&apiKey=' + process.env.REACT_APP_API_KEY)
+        console.log(this.props)
+        let query = 'q='+ this.props.match.params.Q +'&';
+        let source = 'source=' +this.props.location.state.Source+ '&'
+        let sort = 'sortBy='+this.props.location.state.SortBy+ '&';
+        let everything = axios.get('https://newsapi.org/v2/everything?'+ query + source + sort +'apiKey=' + process.env.REACT_APP_API_KEY)
+        let top_headlines = axios.get('https://newsapi.org/v2/top-headlines?'+ query + source + sort +'apiKey=' + process.env.REACT_APP_API_KEY)
         
         Promise.all([everything, top_headlines])
         .then(res => {
@@ -30,10 +32,14 @@ class Search_Results extends Component {
         })
     }
 
-    componentDidUpdate (prevProps, prevState) {
+    componentDidUpdate (prevProps) {
+        console.log(this.props)
+        let query = 'q='+ this.props.match.params.Q +'&';
+        let source = 'source=' +this.props.location.state.Source+ '&'
+        let sort = 'sortBy='+this.props.location.state.SortBy+ '&';
         if(prevProps.match.params.Q !== this.props.match.params.Q) {
-            let everything = axios.get('https://newsapi.org/v2/everything?q='+ this.props.match.params.Q +'&apiKey=' + process.env.REACT_APP_API_KEY)
-            let top_headlines = axios.get('https://newsapi.org/v2/top-headlines?q='+ this.props.match.params.Q +'&apiKey=' + process.env.REACT_APP_API_KEY)
+            let everything = axios.get('https://newsapi.org/v2/everything?'+ query + source + sort +'apiKey=' + process.env.REACT_APP_API_KEY)
+            let top_headlines = axios.get('https://newsapi.org/v2/top-headlines?'+ query + source + sort +'apiKey=' + process.env.REACT_APP_API_KEY)
             
             Promise.all([everything, top_headlines])
             .then(res => {

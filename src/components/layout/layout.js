@@ -5,7 +5,7 @@ import Aux from '../../hoc/Aux';
 let Layout = (props) => {
     return  (
         <Aux>
-            <Navbar Country={props.Country} CountryChangedHandler={(event) => props.CountryChangedHandler(event)} />
+            <Navbar/>
             {props.children}
         </Aux>
     )
