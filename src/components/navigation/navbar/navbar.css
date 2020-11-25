@@ -1,0 +1,18 @@
+.Navbar {
+    display: inline-flex;
+    width: 100%;
+    height: 56px;
+    top: 0;
+    left: 0;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000000;
+}
+.Nav-title {
+    margin: 0;
+    line-height: 56px;
+}
+.Nav-title a {
+    color: white;
+    text-decoration: none;
+}

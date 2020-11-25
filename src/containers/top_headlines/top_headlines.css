@@ -1,0 +1,15 @@
+.Main {
+  display: inline;
+  width: 70%;
+  border-radius: 15px;
+  background-color: black;
+  position: absolute;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.Images {
+  width: 200px;
+  height: 200px;
+}

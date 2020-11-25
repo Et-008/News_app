@@ -1,0 +1,23 @@
+.Navitem {
+    list-style: none;
+    display: grid;
+    align-items: center;
+}
+.Navitem a {
+    padding: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 0.65em;
+    box-sizing: border-box;
+}
+.Navitem a.active,
+.Navitem a:active,
+.Navitem a:hover {
+    color: black;
+    background: white;
+}
+@media (max-width: 650px) {
+    .Navitems {
+        display: none;
+    }
+}
