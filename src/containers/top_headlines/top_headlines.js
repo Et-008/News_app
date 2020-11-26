@@ -35,10 +35,7 @@ class News_Content extends Component {
             }
             if (this.props.location.state.country !== this.state.country) {
                 this.setState({country: this.props.location.state.country})
-                let category = prevProps.match.params.CATEGORY;
-                if (this.props.match.params.CATEGORY !== prevProps.match.params.CATEGORY) {
-                    category = this.props.match.params.CATEGORY ? this.props.match.params.CATEGORY : '';
-                }
+                let category = this.props.match.params.CATEGORY ? this.props.match.params.CATEGORY : '';
                 axios.get('https://newsapi.org/v2/top-headlines?country='+ this.props.location.state.country +'&category='+ category +'&apiKey=' + process.env.REACT_APP_API_KEY)
                 .then(res => {
                     this.setState({headlines: res.data.articles})
