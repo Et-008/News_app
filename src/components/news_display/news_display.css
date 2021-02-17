@@ -1,0 +1,24 @@
+.NewsDisplay {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+.ChangePageButton {
+    height: 50px;
+    color: black;
+    background-color: wheat;
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+.ChangePageButton:hover {
+    background-color: white;
+    color: black;
+}
+.ChangePageButton:focus {
+    outline: none;
+}
